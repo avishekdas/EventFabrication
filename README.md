@@ -1,4 +1,4 @@
-# demo-rest-jersey-spring @ [![Codingpedia.org 100%](http://img.shields.io/badge/Codingpedia.org-100%25-blue.svg)](http://www.codingpedia.org)
+# Event Fabrication
 
 ## Prerequisites:
 * MySQL 5.5 or 5.6 
@@ -39,7 +39,4 @@ OR
 [Tutorial – REST API design and implementation in Java with Jersey and Spring](http://www.codingpedia.org/ama/tutorial-rest-api-design-and-implementation-in-java-with-jersey-and-spring/) - complete explanation of this implementation. 
 ## Changelog
 
-## License
-
-[MIT](https://github.com/Codingpedia/demo-rest-jersey-spring/blob/master/LICENSE) &copy; [Codingpedia.org](http://www.codingpedia.org)
 
