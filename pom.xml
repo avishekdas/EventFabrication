@@ -27,8 +27,8 @@
 	</repositories>
 	
 	<scm>
-		<developerConnection>scm:https://github.com/Codingpedia/demo-rest-jersey-spring.git</developerConnection>
-		<url>https://github.com/Codingpedia/demo-rest-jersey-spring</url>
+		<developerConnection>scm:https://github.com/avishekdas/EventFabrication.git</developerConnection>
+		<url>https://github.com/avishekdas/EventFabrication</url>
 	</scm>
 	
 	<dependencies>
@@ -270,7 +270,7 @@
 					<providerImplementations>
 						<git>jgit</git>
 					</providerImplementations>
-					<tagBase>https://github.com/Codingpedia/demo-rest-jersey-spring/releases</tagBase>
+					<tagBase>https://github.com/avishekdas/EventFabrication/releases</tagBase>
 					<tagNameFormat>v@{project.version}</tagNameFormat>
 				</configuration>
 				<dependencies>
@@ -403,7 +403,7 @@
                                     <goal>test</goal>
                                 </goals>
                                 <configuration>
-                                    <projectFile>${project.basedir}/src/test/resources/soapui/Test-Demo-REST-Jersey-with-Spring-soapui-project.xml
+                                    <projectFile>${project.basedir}/src/test/resources/soapui/EventFabrication-soapui-project.xml
                                     </projectFile>
                                     <outputFolder>${project.build.directory}\soapui-logs\test-results</outputFolder>                                         
                                     <projectProperties>
@@ -443,7 +443,7 @@
                                     <goal>test</goal>
                                 </goals>
                                 <configuration>
-                                    <projectFile>${project.basedir}/src/test/resources/soapui/Test-Demo-REST-Jersey-with-Spring-soapui-project.xml
+                                    <projectFile>${project.basedir}/src/test/resources/soapui/EventFabrication-soapui-project.xml
                                     </projectFile>
                                     <outputFolder>${project.build.directory}\soapui-logs\test-results</outputFolder>                                    
                                     <projectProperties>
