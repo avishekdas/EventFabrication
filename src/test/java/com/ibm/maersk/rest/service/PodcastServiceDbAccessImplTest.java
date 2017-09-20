@@ -58,7 +58,6 @@ public class PodcastServiceDbAccessImplTest {
 		verify(podcastDao, atLeastOnce()).getPodcastByFeed(SOME_FEED);//verifies if the method podcastDao.getPodcastByFeed has been called at least once with that exact input parameter		
 		verify(podcastDao, atLeast(1)).getPodcastByFeed(SOME_FEED);//verifies if the method podcastDao.getPodcastByFeed has been called at least once with that exact input parameter
 		verify(podcastDao, times(1)).createPodcast(any(PodcastEntity.class));
-		verify(podcastDao, never()).getLegacyPodcastById(anyLong());//verifies the method podcastDao.getLegacyPodcastById has never been called
 		
 		Assert.assertTrue(createPodcast == CREATED_PODCAST_RESOURCE_ID);
 	}

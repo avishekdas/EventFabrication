@@ -18,9 +18,6 @@ public class PodcastDaoJPA2Impl implements PodcastDao {
 	@PersistenceContext(unitName="demoRestPersistence")
 	private EntityManager entityManager;
 
-	@PersistenceContext(unitName="demoRestPersistenceLegacy")
-	private EntityManager entityManagerLegacy;
-	
 	public List<PodcastEntity> getPodcasts(String orderByInsertionDate) {
 		String sqlString = null;
 		if(orderByInsertionDate != null){
@@ -100,25 +97,4 @@ public class PodcastDaoJPA2Impl implements PodcastDao {
 		Query query = entityManager.createNativeQuery("TRUNCATE TABLE podcasts");		
 		query.executeUpdate();
 	}
-
-	public List<PodcastEntity> getLegacyPodcasts() {
-		
-		String qlString = "SELECT p FROM PodcastEntity p";
-		TypedQuery<PodcastEntity> query = entityManagerLegacy.createQuery(qlString, PodcastEntity.class);		
-
-		return query.getResultList();
-	}
-
-	public PodcastEntity getLegacyPodcastById(Long id) {
-		try {
-			String qlString = "SELECT p FROM PodcastEntity p WHERE p.id = ?1";
-			TypedQuery<PodcastEntity> query = entityManagerLegacy.createQuery(qlString, PodcastEntity.class);		
-			query.setParameter(1, id);
-
-			return query.getSingleResult();
-		} catch (NoResultException e) {
-			return null;
-		}
-	}
-
 }

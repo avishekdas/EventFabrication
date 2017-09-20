@@ -38,18 +38,4 @@ public interface PodcastDao {
 	/** removes all podcasts */
 	public void deletePodcasts();
 
-	/** 
-	 * Returns all podcasts from "legacy" system
-	 * @return
-	 */
-	public List<PodcastEntity> getLegacyPodcasts();
-	
-	/**
-	 * Returns a "legacy" podcast given its id
-	 * 
-	 * @param id
-	 * @return
-	 */
-	public PodcastEntity getLegacyPodcastById(Long id);	
-
 }

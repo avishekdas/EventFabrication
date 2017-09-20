@@ -109,17 +109,6 @@ public class PodcastServiceDbAccessImpl implements PodcastService {
 		
 		return getPodcastsFromEntities(recentPodcasts);
 	}
-
-	public List<Podcast> getLegacyPodcasts() {
-		List<PodcastEntity> legacyPodcasts = podcastDao.getLegacyPodcasts();
-		
-		return getPodcastsFromEntities(legacyPodcasts);
-	}
-
-	public Podcast getLegacyPodcastById(Long id) {
-		return new Podcast(podcastDao.getLegacyPodcastById(id));
-	}
-	
 	
 	/********************* UPDATE-related methods implementation ***********************/	
 	@Transactional("transactionManager")
