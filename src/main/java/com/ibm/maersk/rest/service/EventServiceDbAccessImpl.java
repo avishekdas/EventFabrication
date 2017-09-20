@@ -32,13 +32,13 @@ public class EventServiceDbAccessImpl implements EventService {
 		validateInputForCreation(event);
 
 		// verify existence of resource in the db (feed must be unique)
-		EventEntity eventByFeed = eventDao.getEventByEqptNo(event.getEqptNo());
+		/*EventEntity eventByFeed = eventDao.getEventByEqptNo(event.getEqptNo());
 		if (eventByFeed != null) {
 			throw new AppException(Response.Status.CONFLICT.getStatusCode(), 409,
 					"Event with feed already existing in the database with the id " + eventByFeed.getEvntId(),
 					"Please verify that the feed and title are properly generated", AppConstants.BLOG_POST_URL);
-		}
-
+		}*/
+		
 		return eventDao.createEvent(new EventEntity(event));
 	}
 

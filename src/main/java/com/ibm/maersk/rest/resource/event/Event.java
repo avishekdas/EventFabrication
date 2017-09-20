@@ -43,16 +43,16 @@ public class Event implements Serializable {
 	private Timestamp evtTmst;
 
 	/** url of the feed */
-	@XmlElement(name = "fqEventId")
-	private Long fqEventId;
+	@XmlElement(name = "eventName")
+	private String eventName;
 
 	/** description of the event */
-	@XmlElement(name = "source")
-	private String source;
+	@XmlElement(name = "operator")
+	private String operator;
 
 	/** insertion date in the database */
-	@XmlElement(name = "ptnrId")
-	private String ptnrId;
+	@XmlElement(name = "subrId")
+	private String subrId;
 
 	/** description of the event */
 	@XmlElement(name = "msgType")
@@ -81,6 +81,10 @@ public class Event implements Serializable {
 	/** insertion date in the database */
 	@XmlElement(name = "actvtTime")
 	private String actvtTime;
+	
+	/** insertion date in the database */
+	@XmlElement(name = "eviewSnrf")
+	private String eviewSnrf;
 
 	public Event(EventEntity eventFabricationEntity) {
 		try {
@@ -95,16 +99,16 @@ public class Event implements Serializable {
 	}
 
 	public Event(Long evntId, String status,
-			Timestamp evtTmst, Long fqEventId, String source, String ptnrId,
+			Timestamp evtTmst, String eventName, String operator, String subrId,
 			Long msgType, String eqptNo, String shipNo, String tpdocNo,
-			String actvtyLoc, String actvtyDate, String actvtTime) {
+			String actvtyLoc, String actvtyDate, String actvtTime, String eviewSnrf) {
 
 		this.evntId = evntId;
 		this.status = status;
 		this.evtTmst = evtTmst;
-		this.fqEventId = fqEventId;
-		this.source = source;
-		this.ptnrId = ptnrId;
+		this.eventName = eventName;
+		this.operator = operator;
+		this.subrId = subrId;
 		this.msgType = msgType;
 		this.eqptNo = eqptNo;
 		this.shipNo = shipNo;
@@ -112,7 +116,7 @@ public class Event implements Serializable {
 		this.actvtyLoc = actvtyLoc;
 		this.actvtyDate = actvtyDate;
 		this.actvtTime = actvtTime;
-
+		this.eviewSnrf = eviewSnrf;
 	}
 
 	public Event() {
@@ -140,30 +144,6 @@ public class Event implements Serializable {
 
 	public void setEvtTmst(Timestamp evtTmst) {
 		this.evtTmst = evtTmst;
-	}
-
-	public Long getFqEventId() {
-		return fqEventId;
-	}
-
-	public void setFqEventId(Long fqEventId) {
-		this.fqEventId = fqEventId;
-	}
-
-	public String getSource() {
-		return source;
-	}
-
-	public void setSource(String source) {
-		this.source = source;
-	}
-
-	public String getPtnrId() {
-		return ptnrId;
-	}
-
-	public void setPtnrId(String ptnrId) {
-		this.ptnrId = ptnrId;
 	}
 
 	public Long getMsgType() {
@@ -220,6 +200,30 @@ public class Event implements Serializable {
 
 	public void setActvtTime(String actvtTime) {
 		this.actvtTime = actvtTime;
+	}
+
+	public String getEventName() {
+		return eventName;
+	}
+
+	public void setEventName(String eventName) {
+		this.eventName = eventName;
+	}
+
+	public String getOperator() {
+		return operator;
+	}
+
+	public void setOperator(String operator) {
+		this.operator = operator;
+	}
+
+	public String getSubrId() {
+		return subrId;
+	}
+
+	public void setSubrId(String subrId) {
+		this.subrId = subrId;
 	}
 
 }

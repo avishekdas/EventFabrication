@@ -41,16 +41,16 @@ public class EventEntity implements Serializable {
 	private Timestamp evtTmst;
 
 	/** url of the feed */
-	@Column(name = "FKFQEVENTID")
-	private Long fqEventId;
+	@Column(name = "EVENTNAME")
+	private String eventName;
 
 	/** description of the podcast */
-	@Column(name = "SOURCE")
-	private String source;
+	@Column(name = "OPERATOR")
+	private String operator;
 
 	/** insertion date in the database */
-	@Column(name = "PTNRID")
-	private String ptnrId;
+	@Column(name = "SUBRID")
+	private String subrId;
 
 	/** url of the feed */
 	@Column(name = "MSGTYPE")
@@ -79,21 +79,25 @@ public class EventEntity implements Serializable {
 	/** insertion date in the database */
 	@Column(name = "ACTVTIME")
 	private String actvtTime;
+	
+	/** insertion date in the database */
+	@Column(name = "EVIEW_SNRF")
+	private String eviewSnrf;
 
 	public EventEntity() {
 	}
 
 	public EventEntity(Long evntId, String status,
-			Timestamp evtTmst, Long fqEventId, String source, String ptnrId,
+			Timestamp evtTmst, String eventName, String operator, String subrId,
 			Long msgType, String eqptNo, String shipNo, String tpdocNo,
-			String actvtyLoc, String actvtyDate, String actvtTime) {
+			String actvtyLoc, String actvtyDate, String actvtTime, String eviewSnrf) {
 
 		this.evntId = evntId;
 		this.status = status;
 		this.evtTmst = evtTmst;
-		this.fqEventId = fqEventId;
-		this.source = source;
-		this.ptnrId = ptnrId;
+		this.eventName = eventName;
+		this.operator = operator;
+		this.subrId = subrId;
 		this.msgType = msgType;
 		this.eqptNo = eqptNo;
 		this.shipNo = shipNo;
@@ -101,7 +105,7 @@ public class EventEntity implements Serializable {
 		this.actvtyLoc = actvtyLoc;
 		this.actvtyDate = actvtyDate;
 		this.actvtTime = actvtTime;
-
+		this.eviewSnrf = eviewSnrf;
 	}
 
 	public EventEntity(Event eventFabrication) {
@@ -138,30 +142,6 @@ public class EventEntity implements Serializable {
 
 	public void setEvtTmst(Timestamp evtTmst) {
 		this.evtTmst = evtTmst;
-	}
-
-	public Long getFqEventId() {
-		return fqEventId;
-	}
-
-	public void setFqEventId(Long fqEventId) {
-		this.fqEventId = fqEventId;
-	}
-
-	public String getSource() {
-		return source;
-	}
-
-	public void setSource(String source) {
-		this.source = source;
-	}
-
-	public String getPtnrId() {
-		return ptnrId;
-	}
-
-	public void setPtnrId(String ptnrId) {
-		this.ptnrId = ptnrId;
 	}
 
 	public Long getMsgType() {
@@ -218,6 +198,38 @@ public class EventEntity implements Serializable {
 
 	public void setActvtTime(String actvtTime) {
 		this.actvtTime = actvtTime;
+	}
+
+	public String getEventName() {
+		return eventName;
+	}
+
+	public void setEventName(String eventName) {
+		this.eventName = eventName;
+	}
+
+	public String getOperator() {
+		return operator;
+	}
+
+	public void setOperator(String operator) {
+		this.operator = operator;
+	}
+
+	public String getSubrId() {
+		return subrId;
+	}
+
+	public void setSubrId(String subrId) {
+		this.subrId = subrId;
+	}
+
+	public String getEviewSnrf() {
+		return eviewSnrf;
+	}
+
+	public void setEviewSnrf(String eviewSnrf) {
+		this.eviewSnrf = eviewSnrf;
 	}
 
 }

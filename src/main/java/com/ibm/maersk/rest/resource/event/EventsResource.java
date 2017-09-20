@@ -88,8 +88,8 @@ public class EventsResource {
 
 		Date date = new Date();
 		Timestamp evttmst = new Timestamp(date.getTime());
-		Event event = new Event(3L, "P", evttmst, Long.parseLong(fqEventId), source, ptnrId, Long.parseLong(msgType),
-				eqptNo, shipNo, tpdocNo, actvtyLoc, actvtyDate, actvtTime);
+		Event event = new Event(3L, "P", evttmst, "LOAD N", source, ptnrId, Long.parseLong(msgType),
+				eqptNo, shipNo, tpdocNo, actvtyLoc, actvtyDate, actvtTime, "");
 		Long createPodcastid = eventService.createEvent(event);
 
 		return Response.status(Response.Status.CREATED)
@@ -133,7 +133,7 @@ public class EventsResource {
 	@GET
 	// @Compress //can be used only if you want to SELECTIVELY enable compression at
 	// the method level. By using the EncodingFilter everything is compressed now.
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	@Produces({ MediaType.APPLICATION_JSON })
 	public List<Event> getEvents(@QueryParam("orderByInsertionDate") String orderByInsertionDate,
 			@QueryParam("numberDaysToLookBack") Integer numberDaysToLookBack) throws IOException, AppException {
 		List<Event> events = eventService.getEvents(orderByInsertionDate, numberDaysToLookBack);
@@ -142,7 +142,7 @@ public class EventsResource {
 
 	@GET
 	@Path("{id}")
-	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	@Produces({ MediaType.APPLICATION_JSON })
 	public Response getEventById(@PathParam("id") Long id, @QueryParam("detailed") boolean detailed)
 			throws IOException, AppException {
 		Event eventById = eventService.getEventById(id);
